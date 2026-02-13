@@ -27,6 +27,18 @@
     --glow-brass: 0 0 15px rgba(197, 160, 101, 0.3);
 }
 
+/* Scroll Reveal States */
+.reveal-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Reset & Base */
 *,
 *::before,
