@@ -339,27 +339,30 @@ footer p {
 }
 
 .science-panel {
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(13, 36, 56, 0.4);
     padding: 2rem;
-    border: 1px solid rgba(197, 160, 101, 0.1);
-    border-radius: 4px;
+    border: 1px solid rgba(0, 229, 255, 0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
 }
 
 /* AI Vision Interface */
 .vision-interface {
     margin-top: 2rem;
-    border: 1px solid var(--color-brass-gold);
-    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--color-cyan-dark);
+    background: rgba(5, 18, 25, 0.6);
     padding: 1rem;
     position: relative;
     overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.1);
 }
 
 .scan-overlay {
     height: 200px;
-    background: linear-gradient(to bottom, rgba(100, 181, 246, 0.1), transparent);
+    background: linear-gradient(to bottom, rgba(0, 229, 255, 0.05), transparent);
     position: relative;
-    border-bottom: 1px solid var(--color-data-blue);
+    border-bottom: 1px solid var(--color-cyan-neon);
     margin-bottom: 1rem;
 }
 
@@ -367,8 +370,8 @@ footer p {
     position: absolute;
     width: 100%;
     height: 2px;
-    background: var(--color-data-blue);
-    box-shadow: 0 0 10px var(--color-data-blue);
+    background: var(--color-cyan-neon);
+    box-shadow: 0 0 10px var(--color-cyan-neon);
     animation: scan 3s infinite linear;
 }
 
@@ -403,15 +406,15 @@ footer p {
 
 @keyframes pulse-red {
     0% {
-        box-shadow: 0 0 0 0 rgba(239, 83, 80, 0.4);
+        box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.4);
     }
 
     70% {
-        box-shadow: 0 0 0 10px rgba(239, 83, 80, 0);
+        box-shadow: 0 0 0 10px rgba(255, 82, 82, 0);
     }
 
     100% {
-        box-shadow: 0 0 0 0 rgba(239, 83, 80, 0);
+        box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
     }
 }
 
@@ -426,26 +429,26 @@ footer p {
 
 .data-row .label {
     width: 100px;
-    color: var(--color-brass-light);
+    color: var(--color-text-muted);
 }
 
 .data-row .value {
     width: 40px;
     text-align: right;
-    color: var(--color-data-blue);
+    color: var(--color-cyan-neon);
 }
 
 .bar-container {
     flex-grow: 1;
     height: 4px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
     margin: 0 10px;
 }
 
 .bar-fill {
     height: 100%;
-    background: var(--color-data-blue);
-    box-shadow: 0 0 5px var(--color-data-blue);
+    background: var(--color-cyan-neon);
+    box-shadow: 0 0 5px var(--color-cyan-neon);
 }
 
 /* Taxonomy Tree */
@@ -461,7 +464,7 @@ footer p {
     top: 0;
     bottom: 0;
     width: 1px;
-    background: rgba(197, 160, 101, 0.3);
+    background: rgba(0, 229, 255, 0.2);
 }
 
 .taxonomy-tree li {
@@ -476,33 +479,33 @@ footer p {
     top: 10px;
     width: 20px;
     height: 1px;
-    background: rgba(197, 160, 101, 0.3);
+    background: rgba(0, 229, 255, 0.2);
 }
 
 .node-root,
 .node-branch,
 .node-leaf {
     font-family: var(--font-heading);
-    color: var(--color-brass-light);
+    color: var(--color-text-muted);
 }
 
 .node-leaf.highlight {
-    color: var(--color-brass-gold);
-    text-shadow: 0 0 10px rgba(197, 160, 101, 0.5);
+    color: var(--color-cyan-neon);
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
 }
 
 /* Valuation Box */
 .valuation-box {
     margin-top: 2rem;
     padding-top: 2rem;
-    border-top: 1px dashed rgba(197, 160, 101, 0.3);
+    border-top: 1px dashed rgba(0, 229, 255, 0.2);
     text-align: center;
 }
 
 .price-tag {
     font-family: var(--font-tech);
     font-size: 2rem;
-    color: var(--color-brass-gold);
+    color: var(--color-gold);
     margin: 0.5rem 0;
-    text-shadow: 0 0 15px rgba(197, 160, 101, 0.2);
+    text-shadow: 0 0 15px rgba(255, 213, 79, 0.2);
 }
