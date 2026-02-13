@@ -4,11 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monetaria | Smart Personal Finance</title>
+    <meta name="description"
+        content="Monetaria - The Digital Cabinet for serious shell collectors. AI Vision grading, taxonomy catalog, and valuation.">
+    <meta name="google-site-verification" content="google63801b77e053c16e" />
+    <title>Monetaria | The Digital Cabinet</title>
+
+    <!-- Fonts: Playfair Display (Heritage) & Inter (Precision) & Roboto Mono (Tech) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&family=Roboto+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
+    <!-- Placeholder for JS if needed later -->
 </head>
 
 <body>
@@ -16,50 +25,76 @@
         <div class="container nav-wrapper">
             <div class="logo">Monetaria</div>
             <nav>
-                <a href="#features">Features</a>
-                <a href="#about">About</a>
+                <a href="#cabinet">The Cabinet</a>
+                <a href="#grading">AI Vision</a>
+                <a href="#taxonomy">Taxonomy</a>
             </nav>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container hero-content">
-            <h1>The Ultimate <br> <span class="highlight">Digital Cabinet</span></h1>
-            <p>Monetaria transforms your shell collection into a digital masterpiece. AI-powered grading, precise
-                valuation, and a beautiful taxonomy-aware catalog for serious collectors.</p>
-            <div class="cta-group">
-                <a href="#" class="btn btn-primary">Join the Waitlist</a>
-                <a href="#" class="btn btn-secondary">Learn More</a>
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="container hero-content">
+                <span class="text-tech">v1.0.0 // SPECIMEN_GRADE: GEM</span>
+                <h1>The Ultimate <br> <span class="highlight">Digital Cabinet</span></h1>
+                <p>Monetaria transforms your shell collection into a digital masterpiece. Precision AI grading and deep
+                    taxonomy for the serious collector.</p>
+                <div class="cta-group">
+                    <a href="#" class="btn btn-primary">Join the Waitlist</a>
+                    <a href="#cabinet" class="btn btn-secondary">Open Drawer</a>
+                </div>
             </div>
-        </div>
-    </section>
+            <!-- Background effects handled in CSS -->
+        </section>
 
-    <section id="features" class="features">
-        <div class="container">
-            <h2>Why Monetaria?</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <h3>🐚 AI Vision Grading</h3>
-                    <p>Our "Vision Agent" analyzes shell condition (F to Gem) by detecting growth lines, lip integrity,
-                        and gloss with expert precision.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>📚 Deep Taxonomy</h3>
-                    <p>Built for both "Lumpers" and "Splitters". Navigate complex synonymies and historical trade names
-                        seamlessly.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>💎 Valuation Engine</h3>
-                    <p>Real-time market valuation based on species rarity, condition score, and historical auction data.
-                    </p>
+        <!-- DRAWER 1: FEATURES -->
+        <section id="cabinet" class="section-drawer">
+            <div class="container">
+                <h2>Specimen Management</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>🐚 AI Vision Grading</h3>
+                        <p>Our "Vision Agent" analyzes shell condition (F to Gem) by detecting growth lines, lip
+                            integrity, and gloss with expert precision.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📚 Deep Taxonomy</h3>
+                        <p>Built for both "Lumpers" and "Splitters". Navigate complex synonymies and historical trade
+                            names seamlessly.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>💎 Valuation Engine</h3>
+                        <p>Real-time market valuation based on species rarity, condition score, and historical auction
+                            data.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- DRAWER 2: SCIENCE -->
+        <section id="grading" class="section-drawer" style="background-color: var(--color-mahogany-deep);">
+            <div class="container">
+                <h2>The Science</h2>
+                <p class="text-tech" style="margin-bottom: 2rem;">ANALYZING: CYPRAEA TIGRIS // CONFIDENCE: 99.8%</p>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>Precision Heatmaps</h3>
+                        <p>Visual identification of defects, chips, and scars invisible to the naked eye.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Data Sovereignty</h3>
+                        <p>Your collection data is stored locally. Encrypted, private, and yours forever.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
             <p>&copy; 2026 DDS Solutions. All rights reserved.</p>
+            <p class="text-tech" style="font-size: 0.75rem; margin-top: 0.5rem;">STATUS: SYSTEM_NORMAL</p>
         </div>
     </footer>
 </body>
