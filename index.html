@@ -17,7 +17,7 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/main.js" defer></script>
+    <script src="js/main.js" type="module"></script>
 </head>
 
 <body>
@@ -73,69 +73,65 @@
         </section>
 
         <!-- DRAWER 2: SCIENCE -->
-        <!-- DRAWER 2: SCIENCE -->
-        <section id="grading" class="section-drawer" style="background-color: var(--color-mahogany-deep);">
+        <section id="grading" class="section-drawer">
             <div class="container">
                 <div class="split-layout">
                     <!-- AI Vision Panel -->
                     <div class="science-panel">
                         <h2>AI Vision Analysis</h2>
-                        <p class="text-tech">TARGET: CYPRAEA TIGRIS // GRADE: F++</p>
+                        <div class="vision-header">
+                            <p class="text-tech" id="vision-status">TARGET: PENDING_UPLOAD // STATUS: IDLE</p>
+                            <input type="file" id="shell-upload" accept="image/*" style="display: none;">
+                            <button class="btn-primary-small"
+                                onclick="document.getElementById('shell-upload').click()">Upload Specimen</button>
+                        </div>
 
                         <div class="vision-interface">
-                            <div class="scan-overlay">
+                            <div class="scan-overlay" id="scan-container">
                                 <div class="scan-line"></div>
-                                <div class="defect-marker" style="top: 30%; left: 40%;"><span>CHIP_DETECTED</span></div>
-                                <div class="defect-marker" style="top: 60%; left: 70%;"><span>GROWTH_LINE</span></div>
+                                <div id="preview-container"></div>
+                                <div id="defect-markers"></div>
                             </div>
                             <div class="vision-data">
                                 <div class="data-row">
                                     <span class="label">GLOSS_INDEX</span>
                                     <div class="bar-container">
-                                        <div class="bar-fill" style="width: 92%;"></div>
+                                        <div class="bar-fill" id="bar-gloss" style="width: 0%;"></div>
                                     </div>
-                                    <span class="value">92%</span>
+                                    <span class="value" id="val-gloss">--%</span>
                                 </div>
                                 <div class="data-row">
                                     <span class="label">LIP_INTEGRITY</span>
                                     <div class="bar-container">
-                                        <div class="bar-fill" style="width: 88%;"></div>
+                                        <div class="bar-fill" id="bar-lip" style="width: 0%;"></div>
                                     </div>
-                                    <span class="value">88%</span>
+                                    <span class="value" id="val-lip">--%</span>
                                 </div>
                                 <div class="data-row">
                                     <span class="label">PATTERN_MATCH</span>
                                     <div class="bar-container">
-                                        <div class="bar-fill" style="width: 99%;"></div>
+                                        <div class="bar-fill" id="bar-pattern" style="width: 0%;"></div>
                                     </div>
-                                    <span class="value">99%</span>
+                                    <span class="value" id="val-pattern">--%</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Taxonomy Panel -->
-                    <div class="science-panel">
-                        <h2>Deep Taxonomy</h2>
-                        <p class="text-tech">MODE: SPLITTER // DB: WoRMS_SYNC</p>
+                    <div class="science-panel" id="taxonomy-results" style="display: none;">
+                        <h2>Taxonomy & Valuation</h2>
+                        <p class="text-tech" id="taxonomy-mode">RESULT: SCIENTIFIC_GRADE // ENGINE: GEMINI_PRO</p>
 
                         <div class="taxonomy-tree">
                             <ul class="tree">
                                 <li>
-                                    <span class="node-root">Cypraeidae</span>
+                                    <span class="node-root" id="result-family">--</span>
                                     <ul>
                                         <li>
-                                            <span class="node-branch">Cypraea</span>
+                                            <span class="node-branch" id="result-genus">--</span>
                                             <ul>
-                                                <li><span class="node-leaf highlight">C. tigris</span></li>
-                                                <li><span class="node-leaf">C. pantherina</span></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <span class="node-branch">Monetaria</span>
-                                            <ul>
-                                                <li><span class="node-leaf">M. moneta</span></li>
-                                                <li><span class="node-leaf">M. annulus</span></li>
+                                                <li><span class="node-leaf highlight" id="result-species">--</span></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -145,12 +141,29 @@
 
                         <div class="valuation-box">
                             <h3>Estimated Value</h3>
-                            <div class="price-tag">$45.00 - $65.00</div>
-                            <p class="text-tech" style="font-size: 0.8rem;">BASED ON 3,420 AUCTION RECORDS</p>
+                            <div class="price-tag" id="result-price">$0.00</div>
+                            <p class="text-tech" style="font-size: 0.8rem;">BASED ON LIVE MARKET DATA</p>
+                        </div>
+                    </div>
+
+                    <!-- Taxonomy Panel (Default Static) -->
+                    <div class="science-panel" id="taxonomy-static">
+                        <h2>Catalog Intelligence</h2>
+                        <p class="text-tech">MODE: EDUCATIONAL // DB: WoRMS</p>
+                        <div class="taxonomy-tree">
+                            <p>Upload a specimen image to reveal its taxonomic branch and market valuation. Our AI
+                                Vision Agent uses deep conchological diagnostic features to verify species ID.</p>
+                        </div>
+                        <div class="valuation-box" style="opacity: 0.5;">
+                            <h3>Current Market</h3>
+                            <div class="price-tag">$--.--</div>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
+        </div>
+        </div>
         </section>
     </main>
 

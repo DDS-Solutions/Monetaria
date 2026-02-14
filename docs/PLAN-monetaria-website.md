@@ -21,11 +21,11 @@
 - [ ] **[frontend-specialist]** Build "Specimen Cards": Mahogany texture, brass borders, hover lift.
 - [ ] **[frontend-specialist]** Implement "Museum Typography": Playfair Display headings + Inter body.
 
-## Phase 3: Scientific Features
-**Focus:** The "AI" trust.
-- [ ] **[frontend-specialist]** Create "AI Vision" Section: Split-view (Raw vs Analysis).
-- [ ] **[frontend-specialist]** Build "Taxonomy Tree" visual (Lumpers vs Splitters).
-- [ ] **[frontend-specialist]** Implement "Valuation Engine" mockup interface.
+## Phase 5: Zero-Cost AI Vision (Simulation)
+**Focus:** functional-looking mock analysis.
+- [ ] **[frontend-specialist]** Create `js/vision_engine.js` with Liveness Gate & Grading mock functions.
+- [ ] **[frontend-specialist]** Update `index.html` with "Upload" input and interactive analysis flow.
+- [ ] **[frontend-specialist]** Implement "Scan Logic" animation hooks (Scan line -> Result sheet).
 
 ## Phase 4: Polish, Accessibility & SEO
 **Focus:** Best Practices (GDK).
