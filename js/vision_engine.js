@@ -17,7 +17,6 @@ const VisionEngine = {
         this.isProcessing = true;
 
         // 1. Simulate "Safety Gate" (Liveness Check)
-        // In the real app, this calls Gemini 2.0 Flash.
         const isLive = await this._simulateLivenessCheck(imageFile);
 
         if (isLive) {
@@ -29,7 +28,6 @@ const VisionEngine = {
         }
 
         // 2. Simulate "Malacologist" Grading
-        // In the real app, this uses the 198-line prompt with Gemini 1.5 Pro.
         const result = await this._simulateGrading(imageFile);
 
         this.isProcessing = false;
@@ -40,23 +38,39 @@ const VisionEngine = {
     },
 
     async _simulateLivenessCheck(file) {
-        // Mock delay for "Flash" model
         await new Promise(resolve => setTimeout(resolve, 1500));
-
-        // Simulation logic: If filename contains "live", trigger alert
         return file.name.toLowerCase().includes('live');
     },
 
     async _simulateGrading(file) {
-        // Mock delay for "Pro" model analysis
         await new Promise(resolve => setTimeout(resolve, 3000));
 
-        // Return a randomized result mirroring the App's JSON schema
         const grades = ['Gem', 'Excellent', 'Fine', 'Commercial'];
         const species = [
-            { sci: 'Cypraea tigris', common: 'Tiger Cowrie', val: 45.00 },
-            { sci: 'Conus gloriamaris', common: 'Glory of the Seas', val: 250.00 },
-            { sci: 'Monetaria moneta', common: 'Money Cowrie', val: 5.00 }
+            {
+                sci: 'Cypraea tigris',
+                common: 'Tiger Cowrie',
+                val: 45.00,
+                family: 'Cypraeidae',
+                synonyms: ['Lyncina tigris', 'Cypraea lynx (mis-id)'],
+                records: 8420
+            },
+            {
+                sci: 'Conus gloriamaris',
+                common: 'Glory of the Seas',
+                val: 250.00,
+                family: 'Conidae',
+                synonyms: ['Cylinder gloriamaris'],
+                records: 1240
+            },
+            {
+                sci: 'Monetaria moneta',
+                common: 'Money Cowrie',
+                val: 5.00,
+                family: 'Cypraeidae',
+                synonyms: ['Cypraea moneta'],
+                records: 12450
+            }
         ];
 
         const selectedSpecies = species[Math.floor(Math.random() * species.length)];
@@ -67,7 +81,9 @@ const VisionEngine = {
                 scientific_name: selectedSpecies.sci,
                 common_name: selectedSpecies.common,
                 confidence: 0.96 + (Math.random() * 0.03),
-                family: 'Cypraeidae',
+                family: selectedSpecies.family,
+                synonyms: selectedSpecies.synonyms,
+                records: selectedSpecies.records,
                 key_diagnostic_feature: 'Distinct dorsal banding'
             },
             condition_report: {

@@ -76,9 +76,12 @@ function initVision() {
         document.getElementById('result-family').innerText = data.species_prediction.family;
         document.getElementById('result-genus').innerText = data.species_prediction.scientific_name.split(' ')[0];
         document.getElementById('result-species').innerText = data.species_prediction.scientific_name;
+        document.getElementById('result-synonyms').innerText = data.species_prediction.synonyms.join(', ');
 
         // Update Valuation
         document.getElementById('result-price').innerText = `$${data.estimated_value}`;
+        const recordsElement = document.getElementById('result-records');
+        if (recordsElement) recordsElement.innerText = data.species_prediction.records.toLocaleString();
     }
 
     function animateBar(id, valId, target) {
