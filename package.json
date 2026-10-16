@@ -1,0 +1,22 @@
+{
+  "name": "monetaria-website",
+  "version": "1.0.0",
+  "description": "The official marketing website for Monetaria - The Digital Cabinet for serious shell collectors.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "monetaria",
+    "seashells",
+    "taxonomy",
+    "ai-vision",
+    "conchology"
+  ],
+  "author": "DDS Solutions",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "vite": "^6.2.0"
+  }
+}

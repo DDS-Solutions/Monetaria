@@ -5,8 +5,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Monetaria - The Digital Cabinet for serious shell collectors. AI Vision grading, taxonomy catalog, and valuation.">
-    <meta name="google-site-verification" content="google63801b77e053c16e" />
+        content="Monetaria - The Digital Cabinet for serious shell collectors. AI Vision grading, taxonomy catalog, and conchological valuation.">
+    <meta name="keywords" content="seashells, cowrie, conchology, AI grading, specimen valuation, taxonomy">
+    <meta name="author" content="DDS Solutions">
+    <meta name="google-site-verification" content="google63801b77e053c16e">
+    <link rel="canonical" href="https://dds-solutions.github.io/monetaria/">
+
+    <!-- Favicon: Inline SVG Cowrie Shell -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cellipse cx='50' cy='50' rx='42' ry='48' fill='%23051219' stroke='%2300E5FF' stroke-width='4'/%3E%3Cpath d='M 50 10 Q 56 50 50 90' stroke='%23FFD54F' stroke-width='3.5' fill='none'/%3E%3Cellipse cx='38' cy='35' rx='6' ry='4' fill='%2300E5FF'/%3E%3Cellipse cx='62' cy='45' rx='7' ry='5' fill='%2300E5FF'/%3E%3Cellipse cx='42' cy='65' rx='6' ry='5' fill='%2300E5FF'/%3E%3C/svg%3E">
+
+    <!-- Open Graph Metadata -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Monetaria | The Digital Cabinet for Serious Shell Collectors">
+    <meta property="og:description"
+        content="Precision AI vision grading, deep conchological taxonomy, and live auction valuation engine for specimen collectors.">
+    <meta property="og:url" content="https://dds-solutions.github.io/monetaria/">
+    <meta property="og:image" content="https://dds-solutions.github.io/monetaria/og-preview.png">
+
+    <!-- Twitter Card Metadata -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Monetaria | The Digital Cabinet">
+    <meta name="twitter:description"
+        content="AI Vision grading, deep taxonomy, and live valuation for serious shell collectors.">
+
+    <!-- JSON-LD Structured Data: SoftwareApplication per Plan Phase 4 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Monetaria",
+      "operatingSystem": "Web, iOS, Android",
+      "applicationCategory": "DesignApplication, ReferenceApplication",
+      "description": "The Digital Cabinet for serious shell collectors with AI Vision grading, taxonomy catalog, and specimen valuation.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "USD"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "DDS Solutions",
+        "url": "https://dds-solutions.github.io/monetaria/"
+      }
+    }
+    </script>
+
     <title>Monetaria | The Digital Cabinet</title>
 
     <!-- Fonts: Playfair Display (Heritage) & Inter (Precision) & Roboto Mono (Tech) -->
@@ -21,10 +65,13 @@
 </head>
 
 <body>
+    <!-- Accessibility Skip Link -->
+    <a href="#cabinet" class="skip-link">Skip to main content</a>
+
     <header>
         <div class="container nav-wrapper">
             <div class="logo">Monetaria</div>
-            <nav>
+            <nav aria-label="Main Navigation">
                 <a href="#cabinet">The Cabinet</a>
                 <a href="#grading">AI Vision</a>
                 <a href="#taxonomy">Taxonomy</a>
@@ -32,7 +79,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <!-- HERO SECTION -->
         <section class="hero">
             <div class="container hero-content">
@@ -41,11 +88,10 @@
                 <p>Monetaria transforms your shell collection into a digital masterpiece. Precision AI grading and deep
                     taxonomy for the serious collector.</p>
                 <div class="cta-group">
-                    <a href="#" class="btn btn-primary">Join the Waitlist</a>
+                    <button type="button" id="btn-open-waitlist" class="btn btn-primary">Join the Waitlist</button>
                     <a href="#cabinet" class="btn btn-secondary">Open Drawer</a>
                 </div>
             </div>
-            <!-- Background effects handled in CSS -->
         </section>
 
         <!-- DRAWER 1: FEATURES -->
@@ -72,7 +118,7 @@
             </div>
         </section>
 
-        <!-- DRAWER 2: SCIENCE -->
+        <!-- DRAWER 2: SCIENCE & TAXONOMY -->
         <section id="grading" class="section-drawer">
             <div class="container">
                 <div class="split-layout">
@@ -80,10 +126,19 @@
                     <div class="science-panel">
                         <h2>AI Vision Analysis</h2>
                         <div class="vision-header">
-                            <p class="text-tech" id="vision-status">TARGET: PENDING_UPLOAD // STATUS: IDLE</p>
-                            <input type="file" id="shell-upload" accept="image/*" style="display: none;">
-                            <button class="btn-primary-small"
-                                onclick="document.getElementById('shell-upload').click()">Upload Specimen</button>
+                            <p class="text-tech" id="vision-status" aria-live="polite">TARGET: PENDING_UPLOAD // STATUS: IDLE</p>
+                            <input type="file" id="shell-upload" accept="image/*" style="display: none;" aria-label="Upload seashell specimen image">
+                            <button type="button" id="btn-upload-trigger" class="btn-primary-small">Upload Specimen</button>
+                        </div>
+
+                        <!-- 1-Click Interactive Sample Specimen Controls -->
+                        <div class="sample-controls">
+                            <span class="sample-label">⚡ QUICK TEST SPECIMEN:</span>
+                            <div class="sample-chips">
+                                <button type="button" class="btn-sample" data-sample="tiger_cowrie">🐚 Tiger Cowrie (Fine)</button>
+                                <button type="button" class="btn-sample" data-sample="glory_of_the_seas">💎 Glory of the Seas (Gem)</button>
+                                <button type="button" class="btn-sample sample-live" data-sample="live_mollusk">⚠️ Live Specimen (Safety Gate)</button>
+                            </div>
                         </div>
 
                         <div class="vision-interface">
@@ -95,21 +150,21 @@
                             <div class="vision-data">
                                 <div class="data-row">
                                     <span class="label">GLOSS_INDEX</span>
-                                    <div class="bar-container">
+                                    <div class="bar-container" role="progressbar" id="prog-gloss" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Gloss Index">
                                         <div class="bar-fill" id="bar-gloss" style="width: 0%;"></div>
                                     </div>
                                     <span class="value" id="val-gloss">--%</span>
                                 </div>
                                 <div class="data-row">
                                     <span class="label">LIP_INTEGRITY</span>
-                                    <div class="bar-container">
+                                    <div class="bar-container" role="progressbar" id="prog-lip" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Lip Integrity">
                                         <div class="bar-fill" id="bar-lip" style="width: 0%;"></div>
                                     </div>
                                     <span class="value" id="val-lip">--%</span>
                                 </div>
                                 <div class="data-row">
                                     <span class="label">PATTERN_MATCH</span>
-                                    <div class="bar-container">
+                                    <div class="bar-container" role="progressbar" id="prog-pattern" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Pattern Match Confidence">
                                         <div class="bar-fill" id="bar-pattern" style="width: 0%;"></div>
                                     </div>
                                     <span class="value" id="val-pattern">--%</span>
@@ -118,56 +173,113 @@
                         </div>
                     </div>
 
-                    <!-- Taxonomy Panel -->
-                    <div class="science-panel" id="taxonomy-results" style="display: none;">
-                        <h2>Taxonomy & Valuation</h2>
-                        <p class="text-tech" id="taxonomy-mode">RESULT: SCIENTIFIC_GRADE // ENGINE: GEMINI_PRO</p>
+                    <!-- Taxonomy Panel (Anchor target for #taxonomy) -->
+                    <div class="taxonomy-wrapper" id="taxonomy">
+                        <!-- Dynamic Results Panel -->
+                        <div class="science-panel" id="taxonomy-results" style="display: none;">
+                            <h2>Taxonomy & Valuation</h2>
+                            <p class="text-tech" id="taxonomy-mode">RESULT: SCIENTIFIC_GRADE // ENGINE: GEMINI_PRO</p>
 
-                        <div class="taxonomy-tree">
-                            <ul class="tree">
-                                <li>
-                                    <span class="node-root" id="result-family">--</span>
-                                    <ul>
-                                        <li>
-                                            <span class="node-branch" id="result-genus">--</span>
-                                            <ul>
-                                                <li><span class="node-leaf highlight" id="result-species">--</span></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <div class="synonym-list"
-                                style="margin-top: 1rem; font-size: 0.8rem; color: var(--color-text-muted);">
-                                <strong>Synonyms:</strong> <span id="result-synonyms">--</span>
+                            <!-- Specimen Diagnostics Pill Badges -->
+                            <div class="specimen-diagnostics">
+                                <div class="diag-item">
+                                    <span class="diag-label">Common Name</span>
+                                    <span class="diag-val" id="result-common">--</span>
+                                </div>
+                                <div class="diag-item">
+                                    <span class="diag-label">Specimen Size</span>
+                                    <span class="diag-val" id="result-size">-- mm</span>
+                                </div>
+                                <div class="diag-item">
+                                    <span class="diag-label">Surface Integrity</span>
+                                    <span class="diag-val" id="result-surface">--</span>
+                                </div>
+                                <div class="diag-item" style="grid-column: 1 / -1;">
+                                    <span class="diag-label">Diagnostic Conchological Feature</span>
+                                    <span class="diag-val" id="result-diagnostic" style="font-size: 0.8rem; font-weight: normal; color: var(--color-text-muted);">--</span>
+                                </div>
+                            </div>
+
+                            <div class="taxonomy-tree">
+                                <ul class="tree">
+                                    <li>
+                                        <span class="node-root" id="result-family">--</span>
+                                        <ul>
+                                            <li>
+                                                <span class="node-branch" id="result-genus">--</span>
+                                                <ul>
+                                                    <li><span class="node-leaf highlight" id="result-species">--</span></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <div class="synonym-list"
+                                    style="margin-top: 1rem; font-size: 0.8rem; color: var(--color-text-muted);">
+                                    <strong>Synonyms:</strong> <span id="result-synonyms">--</span>
+                                </div>
+                            </div>
+
+                            <div class="valuation-box">
+                                <h3>Estimated Value</h3>
+                                <div class="price-tag" id="result-price">$0.00</div>
+                                <p class="text-tech" style="font-size: 0.8rem;">BASED ON <span id="result-records">0</span>
+                                    LIVE MARKET RECORDS</p>
                             </div>
                         </div>
 
-                        <div class="valuation-box">
-                            <h3>Estimated Value</h3>
-                            <div class="price-tag" id="result-price">$0.00</div>
-                            <p class="text-tech" style="font-size: 0.8rem;">BASED ON <span id="result-records">0</span>
-                                LIVE MARKET RECORDS</p>
-                        </div>
-                    </div>
-
-                    <!-- Taxonomy Panel (Default Static) -->
-                    <div class="science-panel" id="taxonomy-static">
-                        <h2>Catalog Intelligence</h2>
-                        <p class="text-tech">MODE: EDUCATIONAL // DB: WoRMS</p>
-                        <div class="taxonomy-tree">
-                            <p>Upload a specimen image to reveal its taxonomic branch and market valuation. Our AI
-                                Vision Agent uses deep conchological diagnostic features to verify species ID.</p>
-                        </div>
-                        <div class="valuation-box" style="opacity: 0.5;">
-                            <h3>Current Market</h3>
-                            <div class="price-tag">$--.--</div>
+                        <!-- Taxonomy Panel (Default Static) -->
+                        <div class="science-panel" id="taxonomy-static">
+                            <h2>Catalog Intelligence</h2>
+                            <p class="text-tech">MODE: EDUCATIONAL // DB: WoRMS</p>
+                            <div class="taxonomy-tree">
+                                <p>Upload a specimen image or click one of the quick test specimens above to reveal its taxonomic branch and market valuation. Our AI
+                                    Vision Agent uses deep conchological diagnostic features to verify species ID.</p>
+                            </div>
+                            <div class="valuation-box" style="opacity: 0.5;">
+                                <h3>Current Market</h3>
+                                <div class="price-tag">$--.--</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- Waitlist Interactive Modal -->
+    <div class="modal-backdrop" id="waitlist-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-card">
+            <button type="button" class="modal-close" id="btn-close-waitlist" aria-label="Close waitlist modal">&times;</button>
+            <div id="waitlist-form-container">
+                <span class="text-tech">VIP ACCESS // DIGITAL CABINET v1.0</span>
+                <h2 id="modal-title">Join the Collector Waitlist</h2>
+                <p>Reserve your private digital cabinet drawer and be first to access conchological AI grading.</p>
+                <form id="waitlist-form">
+                    <div class="form-group">
+                        <label for="collector-email" class="form-label">Email Address</label>
+                        <input type="email" id="collector-email" class="form-input" placeholder="curator@collection.org" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="collector-focus" class="form-label">Primary Collecting Focus</label>
+                        <select id="collector-focus" class="form-select">
+                            <option value="cypraeidae">Cypraeidae (Cowries)</option>
+                            <option value="conidae">Conidae (Cone Shells)</option>
+                            <option value="volutidae">Volutidae & Muricidae</option>
+                            <option value="general">Comprehensive Marine Cabinet</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Request Priority Drawer</button>
+                </form>
+            </div>
+            <div class="modal-success" id="waitlist-success">
+                <span class="text-tech" style="font-size: 2rem;">🐚</span>
+                <h3>Drawer Reserved</h3>
+                <p>Your access key has been queued. You'll receive priority access when invitations unlock.</p>
+                <button type="button" class="btn btn-secondary" id="btn-success-close">Return to Cabinet</button>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <div class="container">

@@ -17,10 +17,10 @@
 - **Cyan Dark:** `#00B8D4` (Borders, Depth)
 
 ### Value (The Treasure)
-- **Gold:** `#FFFFD54F` (Secondary Buttons, Prices, Species Names)
+- **Gold:** `#FFD54F` (Secondary Buttons, Prices, Species Names)
 
 ### Functional
-- **Text Primary:** `#FFFFFF`
+- **Text Primary / White:** `#FFFFFF`
 - **Text Muted:** `#B0BEC5` (Blue-Grey)
 - **Error/Defect:** `#FF5252`
 
